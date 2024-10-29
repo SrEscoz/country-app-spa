@@ -3,12 +3,15 @@
 
 <div class="row">
     <div class="col">
-        <shared-search-box placeHolder="Buscar por capital..."></shared-search-box>
+        <shared-search-box
+                placeHolder="Buscar por capital..."
+                (onSearch)="searchByCapital($event)">
+        </shared-search-box>
     </div>
 </div>
-
+<hr>
 <div class="row">
     <div class="col">
-
+        Tabla con los resultados
     </div>
 </div>
