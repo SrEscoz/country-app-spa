@@ -6,7 +6,7 @@ import {ContactPageComponent} from './shared/pages/contact-page/contact-page.com
 
 const routes: Routes = [
 	{
-		path: '',
+		path: 'home',
 		component: HomePageComponent
 	},
 	{
@@ -23,7 +23,7 @@ const routes: Routes = [
 	},
 	{
 		path: '**',
-		redirectTo: ''
+		redirectTo: 'countries'
 	}
 ];
 
