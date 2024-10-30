@@ -1,27 +1,28 @@
-# CountryAppSpa
+# 🌎 CountryAppSpa
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.10.
+CountryAppSpa es una aplicación SPA desarrollada con Angular, diseñada para explorar información sobre países.
 
-## Development server
+## 🚀 Requisitos Previos
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Node.js
+- Angular CLI
 
-## Code scaffolding
+## ⚙️ Instalación
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Clona el repositorio e instala las dependencias:
 
-## Build
+- git clone https://github.com/SrEscoz/country-app-spa.git
+- cd country-app-spa
+- npm install
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 📜 Scripts Principales
 
-## Running unit tests
+- ng serve: Inicia el servidor de desarrollo en http://localhost:4200/.
+- ng build: Genera los archivos de producción en dist/.
+- ng test: Ejecuta pruebas unitarias con Karma.
+- ng e2e: Ejecuta pruebas end-to-end.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 🛠️ Tecnologías
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Angular: Framework principal
+- TypeScript, HTML, CSS
