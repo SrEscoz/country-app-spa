@@ -5,9 +5,9 @@
     <div class="col">
         <shared-search-box
                 placeHolder="Buscar por nombre..."
+                [initialValue]="initialValue"
                 (onDebounce)="searchByCountry($event)"
-                (onSearch)=" searchByCountry($event)
-        ">
+                (onSearch)=" searchByCountry($event)">
         </shared-search-box>
     </div>
 </div>
