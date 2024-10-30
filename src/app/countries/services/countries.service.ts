@@ -19,6 +19,7 @@ export class CountriesService {
 	};
 
 	constructor(private httpClient: HttpClient) {
+		this.loadFromLocalStorage();
 	}
 
 	private getCountryRequest(url: string): Observable<Country[]> {
@@ -34,7 +35,10 @@ export class CountriesService {
 			.pipe(
 				tap(countries => {
 					this._cacheStore.capital = {term: capital, countries: countries};
-				})
+				}),
+				tap(
+					() => this.saveToLocalStorage()
+				)
 			);
 	}
 
@@ -43,7 +47,10 @@ export class CountriesService {
 			.pipe(
 				tap(countries => {
 					this._cacheStore.region = {term: region, countries: countries};
-				})
+				}),
+				tap(
+					() => this.saveToLocalStorage()
+				)
 			);
 	}
 
@@ -52,7 +59,10 @@ export class CountriesService {
 			.pipe(
 				tap(countries => {
 					this._cacheStore.country = {term: country, countries: countries};
-				})
+				}),
+				tap(
+					() => this.saveToLocalStorage()
+				)
 			);
 	}
 
@@ -62,6 +72,18 @@ export class CountriesService {
 				map(countries => countries.length > 0 ? countries[0] : null),
 				catchError(() => of(null))
 			);
+	}
+
+	private saveToLocalStorage(): void {
+		localStorage.setItem('cache', JSON.stringify(this._cacheStore));
+	}
+
+	private loadFromLocalStorage(): void {
+		if (!localStorage.getItem('cache')) {
+			return;
+		}
+
+		this._cacheStore = JSON.parse(localStorage.getItem('cache')!);
 	}
 
 	get cacheStore(): CacheStore {
